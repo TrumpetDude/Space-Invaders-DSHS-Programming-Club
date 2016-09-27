@@ -31,7 +31,7 @@ pygame.display.update()
 '''
 while True:
     window.fill((0,0,0))
-    pygame.draw.rect(window, (255,0,0), (shipLocation,935,50,50),0)#MAKE THI A SHIP
+    pygame.draw.rect(window, (0,255,0), (shipLocation,935,50,50),0)#MAKE THI A SHIP
     pygame.display.update()
     for event in pygame.event.get():
         if event.type==QUIT or (event.type==KEYUP and event.key==K_ESCAPE):
