@@ -32,6 +32,15 @@ RED = (255, 0, 0)
 GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
 
+'''
+This is background drawing just in case we lose the image somehow. This does not need to be executed.
+for stars in range(1, 200):
+    starX=randint(1,1885)
+    starY=randint(1,980)
+    starSize=randint(1,5)
+    pygame.draw.rect(window, (255,255,255),((starX,starY),(starSize,starSize)),0)
+pygame.display.update()
+'''
 # Set the Ship's Location
 shipLocation=850
 
