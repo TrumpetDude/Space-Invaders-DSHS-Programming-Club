@@ -3,10 +3,9 @@ DONE:
 INITIALIZATION
 BASIC MOVEMENT
 OUTLINE FOR SHOOTING
-BACKGROUND CREATION
+BACKGROUND
 
 TODO:
-REMEMBER BACKGROUND SO WE CAN DO STARS
 ENEMY DRAWING AND MOVEMENT
 SHOOTING ENEMIES
 SCORE SYSTEM
@@ -36,20 +35,14 @@ BLUE = (0, 0, 255)
 # Set the Ship's Location
 shipLocation=850
 
-#STAR LOCATIONS NEED TO BE REMEMBERED
-'''
-for stars in range(1, 200):
-    starX=randint(1,1885)
-    starY=randint(1,980)
-    starSize=randint(1,5)
-    pygame.draw.rect(window, (255,255,255),((starX,starY),(starSize,starSize)),0)
+#Import Background
+background=pygame.image.load("starBackground.GIF")
 pygame.display.update()
-'''
 
 # Main while Loop
 while True:
-    # Fill the screen with back
-    window.fill(WHITE)
+    # Redraw the Background
+    window.blit(background,(1,1))
     # Create the ship rectangle
     pygame.draw.rect(window, (GREEN), (shipLocation,935,50,50),0)
     # Update the Display
@@ -65,6 +58,6 @@ while True:
                 shipLocation=shipLocation-3
             if event.key==K_RIGHT and shipLocation<1850:
                 shipLocation=shipLocation+3
-            if event.key==K_SPACE:
+            if event.key==K_UP:
                 # Shooting Key
                 pass
