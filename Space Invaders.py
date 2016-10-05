@@ -11,6 +11,7 @@ SHOOTING ENEMIES
 SCORE SYSTEM
 LOSING/WINNING
 TITLE SCREEN
+OBASTACLES
 '''
 
 # Import Pygame
@@ -34,18 +35,17 @@ pygame.key.set_repeat(1,1)
 
 # Set the Ship's Location
 shipLocation = 850
-shipX = 850
-shipY = 921
+shipX = 914
+shipY = 900
 
-#Import Background
-background=pygame.image.load("starBackground.GIF")
+#Import Ship
 ship=pygame.image.load("ship.PNG")
 
 # Main while Loop
 while True:
     
     # Redraw the Background
-    window.blit(background,(1,1))
+    window.fill(BLACK)
     
     #Draw the ship
     window.blit(ship,(shipX, shipY))
@@ -61,7 +61,7 @@ while True:
         if event.type == KEYDOWN:
             if event.key == K_LEFT and shipX > 0:
                 shipX = shipX - 3
-            if event.key == K_RIGHT and shipX < 1796:
+            if event.key == K_RIGHT and shipX < 1814:
                 shipX = shipX + 3
             if event.key == K_UP:
                 # Shooting Key
