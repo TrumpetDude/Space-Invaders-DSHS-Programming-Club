@@ -26,14 +26,16 @@ BLUE = (0, 0, 255)
 
 # Setup the display of the screen
 pygame.init()
-window = pygame.display.set_mode((1900,985))
+window = pygame.display.set_mode((1920,1080),pygame.FULLSCREEN)
 window.fill(BLACK)
 
 # Set the key repeat
 pygame.key.set_repeat(1,1)
 
 # Set the Ship's Location
-shipLocation=850
+shipLocation = 850
+shipX = 850
+shipY = 921
 
 #Import Background
 background=pygame.image.load("starBackground.GIF")
@@ -46,7 +48,7 @@ while True:
     window.blit(background,(1,1))
     
     #Draw the ship
-    window.blit(ship,(shipLocation,921))
+    window.blit(ship,(shipX, shipY))
     
     # Update the Display
     pygame.display.update()
@@ -57,10 +59,10 @@ while True:
             pygame.quit()
             sys.exit()
         if event.type == KEYDOWN:
-            if event.key == K_LEFT and shipLocation > 0:
-                shipLocation = shipLocation - 3
-            if event.key == K_RIGHT and shipLocation < 1796:
-                shipLocation = shipLocation + 3
+            if event.key == K_LEFT and shipX > 0:
+                shipX = shipX - 3
+            if event.key == K_RIGHT and shipX < 1796:
+                shipX = shipX + 3
             if event.key == K_UP:
                 # Shooting Key
                 pass
