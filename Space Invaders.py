@@ -65,11 +65,11 @@ while True:
                 shipX = shipX + 3
             if event.key == K_UP:
                 shotX=shipX+51
-                for shotY in range(0,900,20):
+                for shotY in range(0,900,30):
                     start=(shotX,900-shotY)
                     end=(shotX,870-shotY)
                     pygame.draw.line(window, WHITE, start, end, 8)
                     pygame.display.update()
-                    pygame.time.delay(80)
+                    pygame.time.delay(25)
                     pygame.draw.line(window, BLACK, start, end, 8)
                     pygame.display.update()
