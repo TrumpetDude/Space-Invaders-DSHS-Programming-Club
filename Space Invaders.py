@@ -4,7 +4,6 @@ INITIALIZATION
 BASIC MOVEMENT
 OUTLINE FOR SHOOTING
 BACKGROUND
-
 TODO:
 ENEMY DRAWING AND MOVEMENT
 SHOOTING ENEMIES
@@ -65,6 +64,7 @@ while True:
                 shipX = shipX + 3
             if event.key == K_UP:
                 shotX=shipX+51
+                
                 for shotY in range(0,900,30):
                     start=(shotX,900-shotY)
                     end=(shotX,870-shotY)
@@ -73,3 +73,15 @@ while True:
                     pygame.time.delay(25)
                     pygame.draw.line(window, BLACK, start, end, 8)
                     pygame.display.update()
+                    
+                    
+                    for event in pygame.event.get():    
+                        if event.type == KEYDOWN:
+                            if event.key == K_LEFT and shipX > 0:
+                                shipX = shipX - 3
+                            if event.key == K_RIGHT and shipX < 1814:
+                                shipX = shipX + 3
+                            if event.key == K_UP:
+                                pass
+                        
+
